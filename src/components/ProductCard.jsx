@@ -1,9 +1,17 @@
+
 import { useState } from "react";
 import { FiHeart as Heart } from "react-icons/fi"; // Heart icon
 import { FiStar as Star } from "react-icons/fi";   // Star icon
 
 const ProductCard = ({ product, onAddToCart }) => {
   const [liked, setLiked] = useState(false);
+
+  const handleWhatsApp = () => {
+    const phone = "9744307661"; 
+    const message = `Hi! I'm interested in your product: ${product.name} priced at ₹${product.price}`;
+    const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
+    window.open(url, "_blank"); // open WhatsApp in a new tab
+  };
 
   return (
     <div className="group relative bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300">
@@ -12,7 +20,8 @@ const ProductCard = ({ product, onAddToCart }) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 cursor-pointer"
+          onClick={handleWhatsApp} // <-- WhatsApp on click
         />
         
         {/* Wishlist Button */}
@@ -44,7 +53,7 @@ const ProductCard = ({ product, onAddToCart }) => {
         <p className="text-sm text-gray-500 mb-4 capitalize">{product.category}</p>
 
         <div className="flex items-center justify-between">
-          <span className="text-2xl font-bold text-gray-900">${product.price}</span>
+          <span className="text-2xl font-bold text-gray-900">₹{product.price}</span>
           <button
             onClick={() => onAddToCart(product)}
             className="px-5 py-2 bg-gray-900 text-white rounded-full hover:bg-amber-600 transition-colors"

@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../assets/Logo.jpeg"; // 👈 Update path based on where you save the image
+import logo from "../assets/Logo2.jpg"; // 👈 Update path based on where you save the image
 
 function Header() {
   return (
@@ -12,7 +12,7 @@ function Header() {
           className="w-12 h-12 object-contain"
         />
         <h1 className="text-2xl font-bold text-gray-800 tracking-wide">
-          LUXE BEAUTY
+          LUXE 
         </h1>
       </div>
 

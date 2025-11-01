@@ -1,5 +1,6 @@
 
 import { FiArrowRight as ArrowRight } from "react-icons/fi";
+import Home from '../assets/Home.jpg'
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=1920&h=1080&fit=crop"
+          src={Home}
           alt="Hero"
           className="w-full h-full object-cover"
         />
